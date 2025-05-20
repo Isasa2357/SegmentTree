@@ -3,8 +3,11 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-# User define
+### User define
 設計
+
+# test
+make_SegmentTree/test*
 
 # User-specific files
 *.rsuser
