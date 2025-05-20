@@ -4,10 +4,11 @@
 
 template <typename T, typename Op>
 class DequeSegmentTree: public SegmentTree<T, Op> {
-
+protected:
 	int real_size_;			// Ši”[‚³‚ê‚Ä‚¢‚é’l‚Ì”
 	int write_idx_;			// ŽŸ‚É‘‚«ž‚Þ’l‚ÌˆÊ’u
 
+public:
 	DequeSegmentTree(const int size, Op op, T identity)
 		:SegmentTree(size, op, identity), real_size_(0), write_idx_(0)
 	{
@@ -29,18 +30,19 @@ public:
 	}
 
 	/*-------------------- ‘‚«ž‚Ý ---------------------*/
-	
+public:
 	inline void add(const T& new_data) {
 		this->write(new_data, this->write_idx_);
 		this->step_write_idx();
 	}
 
 	/*-------------------- write_idxŠÇ—--------------------*/
+protected:
 	inline void step_write_idx() { this->write_idx_ = (this->write_idx_ + 1) % this->size(); }
 
 
 	/*-------------------- gettter ---------------------*/
-
+public:
 	inline int real_size() const { return this->real_size_; }
 	inline int write_idx() const { return this->write_idx_; }
 };
