@@ -23,7 +23,7 @@ class DequeSegmentTree: public SegmentTree<T, Op> {
 		:DequeSegmentTree(size, op, identity)
 	{
 		for (auto& ele : vec) {
-			this->write(vec, this->write_idx_);
+			this->add(new_data);
 		}
 	}
 
@@ -32,7 +32,8 @@ class DequeSegmentTree: public SegmentTree<T, Op> {
 		this->write_idx_ = (this->write_idx_ + 1) % this->size();
 	}
 
-
+	/*-------------------- write_idx管理 --------------------*/
+	inline void step_write_idx() { this->write_idx_ = (this->write_idx_ + 1) % this->size(); }
 
 
 	/*-------------------- gettter ---------------------*/
