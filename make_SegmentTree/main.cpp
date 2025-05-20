@@ -3,6 +3,7 @@
 #include <vector>
 #include <functional>
 #include "SegmentTree.h"
+#include "DequeSegmentTree.h"
 
 double plus(double x, double y) {
 	return x + y;
