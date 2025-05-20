@@ -12,9 +12,11 @@ float plus(float x, float y) {
 void test_DST() {
 	DequeSegmentTree<float, std::function<float(float, float)>> tree(10, plus, 0.0);
 
-	for (int i = 1; i < 11; ++i) tree.add(i);
+	for (int i = 1; i < 30; ++i) tree.add(i);
 
 	tree.show();
+
+	std::cout << "check: " << tree.check() << std::endl;
 }
 
 int main(void)

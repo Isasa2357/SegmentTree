@@ -147,4 +147,12 @@ public:
 		}
 		std::cout << std::endl;
 	}
+
+	bool check() const {
+		for (auto i = conv_leaf_idx2tree_idx(0) - 1; i >= 0; --i) {
+			T lc = this->leftchild(i), rc = this->rightchild(i);
+			if (this->tree_[i] != lc + rc) return false;
+		}
+		return true;
+	}
 };
