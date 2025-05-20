@@ -19,6 +19,7 @@ class DequeSegmentTree: public SegmentTree<T, Op> {
 		*/
 	}
 
+public:
 	DequeSegmentTree(const std::vector<T>& vec, const int size, Op op, T identity) 
 		:DequeSegmentTree(size, op, identity)
 	{
@@ -43,4 +44,3 @@ class DequeSegmentTree: public SegmentTree<T, Op> {
 	inline int real_size() const { return this->real_size_; }
 	inline int write_idx() const { return this->write_idx_; }
 };
-
