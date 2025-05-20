@@ -27,12 +27,14 @@ class DequeSegmentTree: public SegmentTree<T, Op> {
 		}
 	}
 
-	/*-------------------- write_idxŠÇ— --------------------*/
-	void step_write_idx() { 
-		this->write_idx_ = (this->write_idx_ + 1) % this->size();
+	/*-------------------- ‘‚«ž‚Ý ---------------------*/
+	
+	inline void add(const T& new_data) {
+		this->write(new_data, this->write_idx_);
+		this->step_write_idx();
 	}
 
-	/*-------------------- write_idxç®¡ç† --------------------*/
+	/*-------------------- write_idxŠÇ—--------------------*/
 	inline void step_write_idx() { this->write_idx_ = (this->write_idx_ + 1) % this->size(); }
 
 
