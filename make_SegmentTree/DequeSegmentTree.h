@@ -10,7 +10,7 @@ protected:
 
 public:
 	DequeSegmentTree(const int size, Op op, T identity)
-		:SegmentTree(size, op, identity), real_size_(0), write_idx_(0)
+		:SegmentTree<T, Op>(size, op, identity), real_size_(0), write_idx_(0)
 	{
 		/*
 		*	@param
@@ -25,13 +25,13 @@ public:
 		:DequeSegmentTree(size, op, identity)
 	{
 		for (auto& ele : vec) {
-			this->add(new_data);
+			this->add(ele);
 		}
 	}
 
 	/*-------------------- ‘‚«ž‚Ý ---------------------*/
 public:
-	inline void add(const T& new_data) {
+	inline void add(T new_data) {
 		this->write(new_data, this->write_idx_);
 		this->step_write_idx();
 	}

@@ -24,8 +24,10 @@ private:
 	// 配列を渡すことにより初期化
 public:
 	SegmentTree(const std::vector<T>& vec, Op operation, const T identity)
-		: size_(vec.size()), identity_(identity), operation_(operation)
+		: size_(vec.size()), identity_(identity)
 	{
+		this->operation_ = operation;
+
 		// 木の構築
 		int n = 1;
 		while (n < this->size()) n <<= 1;
@@ -38,8 +40,10 @@ public:
 	// sizeのみ渡し，空のセグメントツリーを作る
 public:
 	SegmentTree(const int size, Op operation, const T identity)
-		: size_(size), identity_(identity), operation_(operation)
+		: size_(size), identity_(identity)
 	{
+		this->operation_ = operation;
+
 		// 木の構築
 		int n = 1;
 		while (n < size) n <<= 1;
