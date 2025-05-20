@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="DequeSegmentTree.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="test_DequeSegmentTree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DequeSegmentTree.h" />
